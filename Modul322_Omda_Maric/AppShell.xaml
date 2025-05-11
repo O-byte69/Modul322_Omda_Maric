@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:views="clr-namespace:Modul322_Omda_Maric.Views;assembly=Modul322_Omda_Maric"
+  x:Class="Modul322_Omda_Maric.AppShell"
+  Title="SaveUp"
+  Shell.FlyoutBehavior="Disabled"
+  Shell.TabBarIsVisible="False">
+
+    <TabBar>
+        <ShellContent Route="MainPage">
+            <ShellContent.ContentTemplate>
+                <DataTemplate>
+                    <views:MainPage />
+                </DataTemplate>
+            </ShellContent.ContentTemplate>
+        </ShellContent>
+
+        <ShellContent Route="AddProductPage">
+            <ShellContent.ContentTemplate>
+                <DataTemplate>
+                    <views:AddProductPage />
+                </DataTemplate>
+            </ShellContent.ContentTemplate>
+        </ShellContent>
+
+        <ShellContent Route="InfoPage">
+            <ShellContent.ContentTemplate>
+                <DataTemplate>
+                    <views:InfoPage />
+                </DataTemplate>
+            </ShellContent.ContentTemplate>
+        </ShellContent>
+    </TabBar>
+</Shell>

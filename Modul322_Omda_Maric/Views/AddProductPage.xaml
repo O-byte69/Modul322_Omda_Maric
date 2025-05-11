@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="ThisPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Modul322_Omda_Maric.ViewModels"
+    x:Class="Modul322_Omda_Maric.Views.AddProductPage"
+    Title="Produkt hinzufügen">
+
+    <!-- MVVM BindingContext -->
+    <ContentPage.BindingContext>
+        <vm:AddProductViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="24">
+
+            <!-- 1) Produktnamen eingeben -->
+            <Frame CornerRadius="8" HasShadow="True" Padding="12">
+                <Entry
+          Placeholder="Bitte geben Sie den Produktnamen ein"
+          FontSize="16"
+          Text="{Binding NewProductName}" />
+            </Frame>
+
+            <!-- 2) Icon-Auswahl (3×3) -->
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*,*" RowSpacing="12" ColumnSpacing="12">
+                <ImageButton
+          Source="icon1.png"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon1.png" />
+                <ImageButton
+          Source="icon2.png"
+          Grid.Column="1"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon2.png" />
+                <ImageButton
+          Source="icon3.png"
+          Grid.Column="2"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon3.png" />
+
+                <ImageButton
+          Source="icon4.png"
+          Grid.Row="1"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon4.png" />
+                <ImageButton
+          Source="icon5.png"
+          Grid.Row="1"
+          Grid.Column="1"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon5.png" />
+                <ImageButton
+          Source="icon6.png"
+          Grid.Row="1"
+          Grid.Column="2"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon6.png" />
+
+                <ImageButton
+          Source="icon7.png"
+          Grid.Row="2"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon7.png" />
+                <ImageButton
+          Source="icon8.png"
+          Grid.Row="2"
+          Grid.Column="1"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon8.png" />
+                <ImageButton
+          Source="icon9.png"
+          Grid.Row="2"
+          Grid.Column="2"
+          Aspect="AspectFit"
+          WidthRequest="40"
+          HeightRequest="40"
+          Command="{Binding IconSelectedCommand}"
+          CommandParameter="icon9.png" />
+            </Grid>
+
+            <!-- 3) Preis-Eingabe -->
+            <Frame CornerRadius="8" HasShadow="True" Padding="12">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                    <Entry
+            Placeholder="Bitte geben Sie den Preis ein"
+            Keyboard="Numeric"
+            FontSize="16"
+            Text="{Binding NewProductPrice}" />
+                    <Label
+            Grid.Column="1"
+            Text="CHF"
+            VerticalOptions="Center"
+            FontSize="16"
+            Margin="4,0,0,0" />
+                </Grid>
+            </Frame>
+
+            <!-- 4) Aktion-Buttons -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                <Button
+          Text="Fertig"
+          Command="{Binding SaveCommand}" />
+                <Button
+          Grid.Column="1"
+          Text="Abbrechen"
+          Command="{Binding CancelCommand}" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
